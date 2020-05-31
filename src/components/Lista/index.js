@@ -5,7 +5,7 @@ import Card from '../Card'
 import { Container } from './styles';
 import { MdAdd } from 'react-icons/md';
 
-function Lista({data}) {
+function Lista({data, index: listIndex}) {
   return (
       <Container done={data.done}>
           <header>
@@ -19,7 +19,7 @@ function Lista({data}) {
               }
           </header>
           <ul>
-            {data.cards.map(data => <Card key={data.id} data={data} />)}
+            {data.cards.map((data,index) => <Card key={data.id} index={index} data={data} listIndex={listIndex} />)}
           </ul>
 
       </Container>
